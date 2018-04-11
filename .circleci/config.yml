@@ -36,7 +36,7 @@ jobs:
 
   test_image:
     docker:
-      - image: $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
+      - image: tianhaoz95/botx-ros-image:kinetic
         environment:
           <<: *image_config
 
