@@ -6,7 +6,7 @@ image_config: &image_config
 
   IMAGE_NAME: botx-ros-image
 
-  IMAGE_TAG: botx
+  IMAGE_TAG: kinetic
 
   # NOTE: if you're modifying this config.yml file manually
   # rather than using the included setup script,
@@ -14,20 +14,6 @@ image_config: &image_config
   # to the `test_image` job (line 55)
 
   LINUX_VERSION: UBUNTU_XENIAL
-
-  # RUBY_VERSION_NUM: # pick a version from https://cache.ruby-lang.org/pub/ruby
-
-  # NODE_VERSION_NUM: # pick a version from https://nodejs.org/dist
-
-  PYTHON_VERSION_NUM: 3.5.2
-
-  JAVA: false
-
-  MYSQL_CLIENT: false
-
-  POSTGRES_CLIENT: false
-
-  BROWSERS: false
 
 version: 2
 jobs:
@@ -38,8 +24,6 @@ jobs:
 
     steps:
       - checkout
-
-      - run: bash scripts/generate.sh > Dockerfile
 
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 

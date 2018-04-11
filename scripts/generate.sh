@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "FROM buildpack-deps:$(awk -F'_' '{print tolower($2)}' <<< $LINUX_VERSION)"
+echo "FROM ros:kinetic-ros-core-xenial"
 
 RUN apt-get update
 
