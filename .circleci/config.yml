@@ -44,17 +44,13 @@ jobs:
       - checkout
 
       - run:
-          name: start Xvfb for phantomjs test
-          # command: Xvfb :99
-          # background: true
-
-      - run:
           name: test ros installation
           command: |
             rosversion ros
             python --version
             python3 --version
             python2 --version
+            virtualenv --version
 
       - store_test_results:
           path: test_results
