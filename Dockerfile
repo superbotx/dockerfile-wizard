@@ -3,7 +3,7 @@
 FROM ubuntu:xenial
 
 # install virtualenv
-RUN pip3 install virtualenv
+RUN pip install virtualenv
 
 # install packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
