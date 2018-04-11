@@ -55,7 +55,6 @@ jobs:
             python --version
             python3 --version
             python2 --version
-            virtualenv --version
 
       - store_test_results:
           path: test_results
