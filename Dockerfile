@@ -29,9 +29,6 @@ ENV LC_ALL C.UTF-8
 RUN rosdep init \
     && rosdep update
 
-RUN echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-RUN source ~/.bashrc
-
 # install ros packages
 RUN apt-get update && apt-get install -y \
     ros-kinetic-ros-core=1.3.1-0* \
