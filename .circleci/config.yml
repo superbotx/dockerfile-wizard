@@ -49,12 +49,9 @@ jobs:
           # background: true
 
       - run:
-          name: bats tests
+          name: test ros installation
           command: |
-            mkdir -p test_results/bats
-            bats scripts/tests.bats | \
-            perl scripts/tap-to-junit.sh > \
-            test_results/bats/results.xml
+            rosversion ros
 
       - store_test_results:
           path: test_results
