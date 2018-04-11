@@ -52,6 +52,9 @@ jobs:
           name: test ros installation
           command: |
             rosversion ros
+            python --version
+            python3 --version
+            python2 --version
 
       - store_test_results:
           path: test_results
