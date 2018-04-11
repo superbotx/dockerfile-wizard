@@ -14,6 +14,9 @@ RUN apt-get install -y python-pip
 # install virtualenv
 RUN pip3 install virtualenv
 
+# install venv
+RUN apt-get install python3-venv
+
 # install packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     dirmngr \
