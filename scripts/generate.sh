@@ -25,13 +25,13 @@ echo "RUN perl -MCPAN -e 'install XML::Generator'"
 # install lsb-release, etc., for testing linux distro
 echo "RUN apt-get update && apt-get -y install lsb-release unzip"
 
-echo "RUN sh -c 'echo \"deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main\" > /etc/apt/sources.list.d/ros-latest.list' \
-  && apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 \
-  && apt-get update \
-  && apt-get install ros-kinetic-desktop-full \
-  && apt-cache search ros-kinetic \
-  && rosdep init \
-  && rosdep update \
-  && echo \"source /opt/ros/kinetic/setup.bash\" >> ~/.bashrc \
-  && source ~/.bashrc \
-  && apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential"
+echo "RUN sh -c 'echo \"deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main\" > /etc/apt/sources.list.d/ros-latest.list'"
+echo "RUN apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116"
+echo "RUN apt-get update"
+echo "RUN apt-get install ros-kinetic-desktop-full"
+echo "RUN apt-cache search ros-kinetic"
+echo "RUN rosdep init"
+echo "RUN rosdep update"
+echo "RUN echo \"source /opt/ros/kinetic/setup.bash\" >> ~/.bashrc"
+echo "RUN source ~/.bashrc"
+echo "RUN apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential"
