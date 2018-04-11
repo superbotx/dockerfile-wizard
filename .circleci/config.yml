@@ -46,7 +46,11 @@ jobs:
       - run:
           name: test ros installation
           command: |
-            rosversion ros
+            rosversion roscpp
+
+      - run:
+          name: test python version
+          command: |
             python --version
             python3 --version
             python2 --version
