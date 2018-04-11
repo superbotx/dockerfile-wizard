@@ -2,8 +2,17 @@
 # generated from docker_images/create_ros_core_image.Dockerfile.em
 FROM ubuntu:xenial
 
+# first update anyway
+RUN apt-get update
+
+# install pip3
+RUN apt-get install -y python3-pip
+
+# instsall pip
+RUN apt-get install -y python-pip
+
 # install virtualenv
-RUN pip install virtualenv
+RUN pip3 install virtualenv
 
 # install packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

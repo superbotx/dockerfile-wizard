@@ -62,6 +62,11 @@ jobs:
             pip --version
             pip3 --version
 
+      - run:
+          name: test virtualenv version
+          command: |
+            virtualenv --version
+
       - store_test_results:
           path: test_results
 
