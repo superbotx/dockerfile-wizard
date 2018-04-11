@@ -26,15 +26,6 @@ if [ ! -e $NODE_VERSION_NUM ] ; then
     rm -r node-v$NODE_VERSION_NUM"
 fi
 
-if [ ! -e $PYTHON_VERSION_NUM ] ; then
-    echo "RUN wget https://www.python.org/ftp/python/$PYTHON_VERSION_NUM/Python-$PYTHON_VERSION_NUM.tgz && \
-    tar xzf Python-$PYTHON_VERSION_NUM.tgz && \
-    rm Python-$PYTHON_VERSION_NUM.tgz && \
-    cd Python-$PYTHON_VERSION_NUM && \
-    ./configure && \
-    make install"
-fi
-
 # if [ ! -e $PHP_VERSION_NUM ] ; then
 #     wget "http://php.net/distributions/php-${PHP_VERSION_NUM}.tar.xz"
 # fi
@@ -121,6 +112,13 @@ RUN curl --silent --show-error --location --fail --retry 3 --output /tmp/chromed
   && mv chromedriver /usr/local/bin/chromedriver \
   && chmod +x /usr/local/bin/chromedriver"
 fi
+
+echo "RUN wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tgz && \
+  tar xzf Python-2.7.12.tgz && \
+  rm Python-2.7.12.tgz && \
+  cd Python-2.7.12 && \
+  ./configure && \
+  make install"
 
 echo "RUN sudo sh -c 'echo \"deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main\" > /etc/apt/sources.list.d/ros-latest.list' \
   && sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 \
