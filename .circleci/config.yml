@@ -56,6 +56,12 @@ jobs:
             python3 --version
             python2 --version
 
+      - run:
+          name: test pip version
+          command: |
+            pip --version
+            pip3 --version
+
       - store_test_results:
           path: test_results
 
