@@ -11,11 +11,11 @@ RUN apt-get install -y python3-pip
 # instsall pip
 RUN apt-get install -y python-pip
 
+# install venv
+RUN apt-get install -y python3-venv
+
 # install virtualenv
 RUN pip3 install virtualenv
-
-# install venv
-RUN apt-get install python3-venv
 
 # install packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
